@@ -5,6 +5,7 @@
     <Card />
     <Tree :data="tree" />
     <Dynamic />
+    <TeleportBox />
   </div>
 </template>
 
@@ -12,6 +13,8 @@
 import { reactive } from 'vue';
 import Father from '../../pages/Father&Child/Father.vue';
 import Dynamic from '../../pages/Components/Dynamic.vue';
+import TeleportBox from '@/pages/teleport/TeleportBox.vue';
+
 interface Tree {
   name: string
   checked: boolean
