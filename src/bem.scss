@@ -1,0 +1,37 @@
+$namespace: 'kino' !default;
+$block-sel: '-' !default;
+$ele-sel: '__' !default;
+$mod-sel: '--' !default;
+
+@mixin b($block) {
+  $B: #{$namespace + $block-sel + $block};
+
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin e($e) {
+  $selector: &;
+
+  @at-root {
+    #{$selector + $ele-sel + $e} {
+      @content;
+    }
+  }
+}
+
+@mixin m($m) {
+  $selector: &;
+
+  @at-root {
+    #{$selector + $mod-sel + $m} {
+      @content;
+    }
+  }
+}
+
+@mixin bfc {
+  height: 100vh;
+  overflow: hidden;
+}
