@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 // import './style.css'
+import 'animate.css'
 import App from './App.vue'
 import Card from './pages/Components/Card.vue'
 import Tree from './pages/Components/Tree.vue'

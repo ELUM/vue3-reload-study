@@ -2,10 +2,18 @@
   <div class="kino-content">
     <!-- <div class="kino-content__items" v-for="item in 100">{{item}}</div> -->
     <!-- <Father /> -->
-    <Card />
+    <!-- <Card />
     <Tree :data="tree" />
     <Dynamic />
-    <TeleportBox />
+    <TeleportBox /> -->
+
+    <!-- <TransitionIndex /> -->
+
+    <TransitionGroups />
+
+    <TransitionTest />
+
+    <TransitionTweened />
   </div>
 </template>
 
@@ -14,6 +22,10 @@ import { reactive } from 'vue';
 import Father from '../../pages/Father&Child/Father.vue';
 import Dynamic from '../../pages/Components/Dynamic.vue';
 import TeleportBox from '@/pages/teleport/TeleportBox.vue';
+import TransitionIndex from '@/pages/transition/index.vue'
+import TransitionGroups from '@/pages/transition/transition-groups.vue'
+import TransitionTest from '@/pages/transition/transitionTest.vue';
+import TransitionTweened from '@/pages/transition/transitionTweened.vue';
 
 interface Tree {
   name: string
