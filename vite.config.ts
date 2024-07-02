@@ -16,5 +16,6 @@ export default defineConfig({
         additionalData: `@import "./src/bem.scss";`
       }
     }
-  }
+  },
+  base: '/vue3-reload-study/'
 })
