@@ -19,7 +19,7 @@ const Enter = (el: Element, done: Function) => {
       leave-active-class="animate__animated animate__fadeOut">
       <div class="box" v-if="view"></div>
     </Transition> -->
-
+    test
     <Transition appear :appear-active-class="'animate__animated animate__fadeIn'" >
       <div v-if="view" class="box"></div>
     </Transition>
