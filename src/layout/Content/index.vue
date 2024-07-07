@@ -14,11 +14,31 @@
     <TransitionTest />
 
     <TransitionTweened />
+
+    ProvideApp
+
+    <label>
+      <input v-model="color" type="radio" name="color" value="red">
+      red
+    </label>
+    <label>
+      <input v-model="color" type="radio" name="color" value="green">
+      green
+    </label>
+    <label>
+      <input v-model="color" type="radio" name="color" value="yellow">
+      yellow
+    </label>
+    <button @click="click">Click</button>
+    <ProvideA />
+
+    <MittA />
+    <MittB />
   </div>
 </template>
 
 <script setup lang='ts'>
-import { reactive } from 'vue';
+import { provide, reactive, ref } from 'vue';
 import Father from '../../pages/Father&Child/Father.vue';
 import Dynamic from '../../pages/Components/Dynamic.vue';
 import TeleportBox from '@/pages/teleport/TeleportBox.vue';
@@ -26,6 +46,10 @@ import TransitionIndex from '@/pages/transition/index.vue'
 import TransitionGroups from '@/pages/transition/transition-groups.vue'
 import TransitionTest from '@/pages/transition/transitionTest.vue';
 import TransitionTweened from '@/pages/transition/transitionTweened.vue';
+import ProvideA from '@/pages/provide_inject/ProvideA.vue';
+import Bus from '@/utils/Bus';
+import MittA from '@/pages/mitt/MittA.vue';
+import MittB from '@/pages/mitt/MittB.vue';
 
 interface Tree {
   name: string
@@ -75,7 +99,17 @@ const tree = reactive<Tree[]>([
     ]
   }
 ])
-
+const color = ref()
+const click = () => {
+  Bus.emit('test', 1, 2)
+}
+Bus.on('test', (data: any,test:any) => {
+  console.log(data,test);
+})
+Bus.on('test',(data:any) => {
+  console.log(data);
+})
+provide('color', color)
 </script>
 
 <style scoped lang="scss">
